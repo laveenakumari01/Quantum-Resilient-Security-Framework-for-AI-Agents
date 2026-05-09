@@ -1,0 +1,101 @@
+.integrations-view {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  display: flex;
+}
+
+.integrations-sidebar {
+  width: 300px;
+  border-right: 1px solid var(--border);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  background: rgba(4, 6, 12, 0.5);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.integrations-content {
+  flex: 1;
+  padding: 4rem;
+  max-width: 1200px;
+}
+
+.integrations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.integration-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.integration-card:hover {
+  border-color: var(--accent);
+  transform: scale(1.02);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.integration-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 245, 212, 0.05);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.integration-name {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.integration-desc {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.handshake-hub {
+  height: 300px;
+  background: radial-gradient(circle at 50% 50%, rgba(142, 45, 226, 0.05), transparent 70%);
+  border: 1px solid var(--border);
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hub-line {
+  position: absolute;
+  width: 200%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: hub-rotate 10s linear infinite;
+}
+
+@keyframes hub-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

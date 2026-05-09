@@ -1,0 +1,122 @@
+.blog-view {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  display: flex;
+}
+
+.blog-sidebar {
+  width: 300px;
+  border-right: 1px solid var(--border);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  background: rgba(4, 6, 12, 0.5);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-content {
+  flex: 1;
+  padding: 4rem;
+  max-width: 1200px;
+}
+
+.blog-header {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+}
+
+.blog-header h1 {
+  font-family: var(--display);
+  font-size: 3.5rem;
+  color: var(--primary);
+  text-shadow: 0 0 40px var(--primary-glow);
+  text-transform: uppercase;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  border-color: var(--primary);
+  transform: translateX(10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.blog-img {
+  width: 350px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.blog-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--surface));
+}
+
+.blog-info {
+  flex: 1;
+  padding: 2rem 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.blog-title {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.blog-excerpt {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.blog-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(142, 45, 226, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

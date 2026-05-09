@@ -1,0 +1,202 @@
+.status-view {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+.status-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+}
+
+.status-title-group h1 {
+  font-family: var(--display);
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0, 245, 212, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+.status-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  position: relative;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stat-value {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+/* Global Map Visual */
+.status-visual-main {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  height: 500px;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(142, 45, 226, 0.05), transparent 70%),
+    linear-gradient(rgba(0, 245, 212, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 212, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  pointer-events: none;
+}
+
+.scanning-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 20px var(--accent-glow);
+  animation: scan-vertical 8s linear infinite;
+  z-index: 2;
+}
+
+@keyframes scan-vertical {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.node-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.node-card {
+  background: rgba(10, 20, 40, 0.4);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.node-card:hover {
+  border-color: var(--primary);
+  background: rgba(142, 45, 226, 0.05);
+}
+
+.node-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.node-status {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.sparkline {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  margin-top: 1rem;
+}
+
+.spark-bar {
+  flex: 1;
+  background: var(--primary);
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+
+.node-card:hover .spark-bar {
+  opacity: 0.8;
+  background: var(--accent);
+}
+
+.back-btn-status {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 2000;
+  background: rgba(142, 45, 226, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 10px 20px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  transition: all 0.3s;
+}
+
+.back-btn-status:hover {
+  background: var(--primary);
+  box-shadow: 0 0 20px var(--primary-glow);
+}

@@ -1,0 +1,32 @@
+{
+  "project": " Quantum Resilient Security Framework",
+  "generated_at": "2026-05-05 18:12:31",
+  "components": {
+    "agent_simulation": "COMPLETE",
+    "anomaly_detection": "COMPLETE",
+    "basic_attack_scenarios": "COMPLETE",
+    "advanced_attack_scenarios": "COMPLETE",
+    "quantum_simulation": "COMPLETE"
+  },
+  "detection_results": {
+    "basic_attacks_detected": "4/4",
+    "basic_detection_rate": "100%",
+    "advanced_attacks_detected": "3/4",
+    "advanced_detection_rate": "75%",
+    "insider_threat_note": "Intentional \u2014 demonstrates ML limitation. Time-series analysis needed for full detection."
+  },
+  "security_status": {
+    "zero_trust": "ACTIVE",
+    "jwt_authentication": "ACTIVE",
+    "ml_anomaly_detection": "ACTIVE",
+    "quantum_simulation": "COMPLETE",
+    "pqc_backend_integration": "COMPLETE"
+  },
+  "output_files": {
+    "logs": "logs/agent_activity.log",
+    "attack_reports": "attack_simulation/reports/",
+    "alerts": "anomaly_detection/alerts/alerts.json",
+    "final_summary": "final_summary.json"
+  },
+  "overall_status": "SYSTEM OPERATIONAL \u2014 Quantum Resilient"
+}

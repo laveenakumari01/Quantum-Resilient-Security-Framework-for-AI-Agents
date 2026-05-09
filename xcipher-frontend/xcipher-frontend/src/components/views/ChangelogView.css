@@ -1,0 +1,114 @@
+.changelog-view {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  display: flex;
+}
+
+.changelog-content {
+  flex: 1;
+  padding: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.changelog-timeline {
+  position: relative;
+  margin-top: 4rem;
+  padding-left: 3rem;
+}
+
+.changelog-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.changelog-entry {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.changelog-entry::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--primary-glow);
+  transform: translateX(-50%);
+}
+
+.changelog-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.version-tag {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.date-tag {
+  color: var(--text3);
+}
+
+.changelog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+}
+
+.changelog-title {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.changelog-list {
+  list-style: none;
+  padding: 0;
+}
+
+.changelog-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.changelog-item::before {
+  content: '>';
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 800;
+}
+
+.impact-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(0, 245, 212, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
